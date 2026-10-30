@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>چت ساده</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- صفحه ورود -->
+  <div id="login-screen" class="screen active">
+    <div class="login-card">
+      <div class="logo">
+        <div class="logo-icon">💬</div>
+        <h1>چت ساده</h1>
+        <p>نام و فامیل خود را وارد کنید</p>
+      </div>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="first-name">نام</label>
+          <input type="text" id="first-name" placeholder="مثلاً علی" required autocomplete="given-name" maxlength="20">
+        </div>
+        <div class="input-group">
+          <label for="last-name">نام خانوادگی</label>
+          <input type="text" id="last-name" placeholder="مثلاً محمدی" required autocomplete="family-name" maxlength="20">
+        </div>
+        <button type="submit" class="btn-primary">ورود به چت</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- صفحه چت -->
+  <div id="chat-screen" class="screen">
+    <header class="chat-header">
+      <div class="header-info">
+        <h2>گروه عمومی</h2>
+        <span id="online-status">آنلاین</span>
+      </div>
+      <button id="logout-btn" class="btn-icon" title="خروج">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </button>
+    </header>
+
+    <div id="messages" class="messages"></div>
+
+    <form id="message-form" class="message-form">
+      <input type="text" id="message-input" placeholder="پیام خود را بنویسید..." autocomplete="off" maxlength="500">
+      <button type="submit" class="btn-send" id="send-btn" disabled>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
